@@ -1,0 +1,38 @@
+.greenb{
+    background-color: forestgreen;
+    color: white;
+    border: 0px solid #4CAF50;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+}
+.redb{
+    background-color: rgb(250, 36, 36);
+    color: white;
+    border: 0px solid red;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 40px;
+}
+#desp {
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:black;
+    width: 1333px;
+    border: 2px solid gold;
+    padding: 10px;
+    margin: 16px;
+  }
+#des {
+    background-color:darkgray;
+    width: 1333px;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 16px;
+  }

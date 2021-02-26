@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" href="{% static 'css/delete.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: teal;">
+    {% include 'main/navbar.html' %}
+    <div class="d">
+        <h1 style="color:whitesmoke;font-family : -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Delete Job Post</h1>
+        <hr>
+        <form method="POST">
+            {% csrf_token %}
+            <h2 style="font-family:cursive;">Job name</h2>
+            <p style="color: whitesmoke;">{{item.jobname}}</p>
+            <h2 style="font-family:cursive;">Organization name</h2>
+            <p style="color: whitesmoke;">{{item.companyname}}</p>
+            <h2 style="font-family: cursive;">Package</h2>
+            <p style="color: whitesmoke;">{{item.package}}</p>
+            <h2 style="font-family: cursive;">Description</h2>
+            <p style="color: whitesmoke;">{{item.description}}</p><br>
+            <h4>Are you sure you want to Delete?</h4>
+            <button class="redbd">Delete</button>
+            <a  class="greenbd" href="{% url 'profile' %}">  Cancel </a>
+        </form>
+    </div>
+</body>
+</html>

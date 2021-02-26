@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+<body>
+    <div class="topnav">
+        <a title="Home" href="{% url 'home' %}">Home</a>
+        <a title="About" href="{% url 'about' %}">About</a>
+        <a title="Profile" href="{% url 'profile' %}">Profile</a>
+        <a title="getjob" href="{% url 'getjobv' %}">Get Job</a>
+        <a title="postjob" href="{% url 'postjobv' %}">Post Job</a>
+        <a title="Logout" href="{% url 'logout' %}">Logout</a>
+        <form method="POST" action="{% url 'search' %}">
+        {% csrf_token %}
+            <input type="text" name="Search" style="margin-top: 14px; margin-left:460px;" placeholder="eg: Django" required/>
+            <button>Search</button>
+        </form>
+        <p style="color:goldenrod; margin-top: -22px; margin-left: 1300px;">Job-Portal</p>
+        
+    </div>
+        
+    <div style="padding-left:16px">
+        <h2></h2>
+        <p></p>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Job</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/getjob.css' %}">
+</head>
+<body style="background-color: teal;">
+    {% include 'main/navbar.html' %}
+    <p style="text-align:center; color:white;">Results for <span style="color: goldenrod;">{{search}}</span></p>
+    <!--<p>{{post}}</p>-->
+    <hr>
+    {% if not post %}
+        <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Looks like There is no match.</h1>
+    {% else %}
+        {% for i in post %}
+            <div id="desj">
+                <h3>Job Role : <strong style="color:darkred;">   {{i.jobname}}</strong></h3>
+                <h3>Organization Name : <strong style="color:darkred;">{{i.companyname}}</strong></h3>
+                <h3>Organization Location : <strong style="color:darkred;">{{i.location}}</strong></h3>
+                <h3>Package : <strong style="color:darkred;">{{i.package}}</strong> </h3>
+                <h3>Description : <strong style="color:darkred;">{{i.description}}</strong> </h3>
+                <h3>Date Posted : <strong style="color:darkred;">{{i.date_posted|date:"F d, Y"}}</strong> </h3>
+                <a class="greenbe" href="mailto:{{i.jobposter.email}}">Apply</a><br><br>
+            </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Job</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/postjob.css' %}">
+</head>
+<body style="background-color: teal;">
+    {% include 'main/navbar.html' %}
+        <!--<h1 style="text-align: center;">Post job</h1>
+        <hr>-->
+        <form method="POST" style="margin-left: 400px;">
+            {% csrf_token %}
+            <div id="despo">
+                <h3>Job Role : </h3>{{form.jobname}}
+                <h3>Organization Name : </h3>{{form.companyname}}
+                <h3>Organization Location : </h3>{{form.location}}
+                <h3>Package : </h3>{{form.package}}
+                <h3>Description :</h3>{{form.description}}<br><br>
+                <button class="pbutton">Post</button> 
+                {% if messages %}
+                    {% for message in messages %}
+                    <p style="font-family: sans-serif; color:green">{{message}} <a style="text-decoration: none; color:black;" href="{% url 'home' %}">  Back to home</a></p>
+                    {% endfor %}
+                {% endif %}
+            </div>    
+        </form>
+</body>
+</html>

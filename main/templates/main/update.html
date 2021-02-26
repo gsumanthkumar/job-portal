@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="{% static 'css/update.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: teal;">
+    {% include 'main/navbar.html' %}
+    <!--{% block content%}-->
+    <div class="a">
+        <form method="POST">
+            {% csrf_token %}
+            <h2 style="font-family:cursive;">Job name</h2>
+            {{form.jobname}}<br>
+            <h2 style="font-family:cursive;">Organization name</h2>
+            {{form.companyname}}<br>
+            <h2 style="font-family:cursive;">Organization location</h2>
+            {{form.location}}<br>
+            <h2 style="font-family: cursive;">Package</h2>
+            {{form.package}}<br>
+            <h2 style="font-family: cursive;">Description</h2>
+            {{form.description}}<br><br>
+            <button class="button">Update</button>
+            <a  class="greenu" href="{% url 'profile' %}">  Cancel </a>
+        </form>
+    </div>
+   <!-- {% endblock %} -->
+</body>
+</html>

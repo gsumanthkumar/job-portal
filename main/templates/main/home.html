@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-image: url(/static/images/background.jpg); background-repeat: no-repeat; height:auto; overflow:hidden;">
+    {% include 'main/navbar.html' %}
+    <div id="m">
+        {% if user.is_authenticated %}
+          <h1 style="text-align: center; color:white;">Welcome To Job Portal  {{user.username}}</h1><br><br><br><br><br>
+        {% endif %}
+        <h3 style="text-align:center; color:white">If You are looking for Opportunities to Boost your career then Congratulations! you have landed at correct place.</h3>
+        <p style="text-align:center; color:white">* In this portal If you are a recruiter You can post Your Job by Selecting POSTJOB in the Nav bar</p>
+        <p style="text-align:center; color:white">* If you are a job seeker you can select GETJOB in the nav bar and apply to the posted jobs</p>
+        <h1 style="font-style: italic; color:whitesmoke">Note : </h1> <h3 style="color:whitesmoke; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">If you are interested in certain job make sure that you  select apply button which redirects you to Recruiter mail and send your resume to that mail by</h3> 
+        <h3 style="color:whitesmoke; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> Mentioning #JobPortal in the mail.</h3><br><br><br><br><br> 
+    </div>
+</body>
+</html>
